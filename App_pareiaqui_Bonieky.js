@@ -35,7 +35,7 @@ export default class PrimeiroProjeto extends Component {
 	render() {
 		return (
 			<View style={styles.body}>
-				<ImageBackground source={require('./img/waterbg.png')} style={styles.bgimage}>
+				<ImageBackground source={require('./images/waterbg.png')} style={styles.bgimage}>
 					<View>
 
 						<View style={styles.infoArea}>
