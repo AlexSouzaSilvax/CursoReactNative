@@ -13,7 +13,7 @@ export default class PrimeiroProjeto extends Component {
     apertouBotao() {
         let s = this.state;
 
-        if (s.inputTexto == "Alex" || s.texto == "alex") {
+        if (s.inputTexto == "Alex" || s.inputTexto == "alex") {
             s.texto = "Você acertou meu nome, é " + s.inputTexto;
             Alert.alert("Você acertou meu nome :)");
         } else {

@@ -1,53 +1,108 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, Button, Alert } from 'react-native';
+import { View, StyleSheet, Text, Image, TextInput } from 'react-native';
 
 export default class PrimeiroProjeto extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { inputTexto: '', texto: '' };
-        this.apertouBotao = this.apertouBotao.bind(this);
+        this.state = { texto1: 'Texto 1', texto2: 'Texto 2' };
+
+        this.escrever = this.escrever.bind(this);
     }
 
+    mudarVogais(texto) {
+        let novoTexto = texto.toLowerCase();
 
-    apertouBotao() {
+        novoTexto = novoTexto.replace(/a|e|i|o|u/g, 'i');
+        novoTexto = novoTexto.replace(/á|à|ã|â/g, 'i');
+        novoTexto = novoTexto.replace(/é|è|ẽ|ê/g, 'i');
+        novoTexto = novoTexto.replace(/í|ì|ĩ|î/g, 'i');
+        novoTexto = novoTexto.replace(/ó|ò|õ|ô/g, 'i');
+        novoTexto = novoTexto.replace(/ú|ù|ũ|û/g, 'i');
+
+        return novoTexto;
+    }
+
+    escrever(t) {
         let s = this.state;
-
-        if (s.inputTexto == "Alex" || s.texto == "alex") {
-            s.texto = "Você acertou meu nome, é " + s.inputTexto;
-            Alert.alert("Você acertou meu nome :)");
-        } else {
-            s.texto = "Meu nome não é esse :(\ntente novamente...";
-        }
+        s.texto1 = t;
+        s.texto2 = this.mudarVogais(t);
         this.setState(s);
     }
 
     render() {
         return (
-            <View style={{ paddingTop: 30 }}>
 
-                <TextInput style={styles.input} placeholder='Descubra qual é o meu nome...' onChangeText={(inputTexto) => this.setState({ inputTexto })} />
+            <View style={styles.body}>
 
-                <Button title='Aperte em mim' onPress={this.apertouBotao}></Button>
+                <View>
+                    <Text style={styles.titulo}>Criador de MIMIMI</Text>
+                </View>
 
-                <Text style={styles.texto} >{this.state.texto}</Text>
+                <View style={styles.inputArea}>
+                    <TextInput style={styles.input} placeholder="Digite seu mimimi" onChangeText={this.escrever} />
+                </View>
 
-            </View >
+                <View style={styles.area}>
+                    <Text style={[styles.texto, styles.texto1]}>{this.state.texto1.toUpperCase()}</Text>
+                    <Image style={styles.guri} source={require('./img/mimimi.jpg')}></Image>
+                    <Text style={[styles.texto, styles.texto2]}>{this.state.texto2.toUpperCase()}</Text>
+                </View>
 
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    body: {
+        backgroundColor: '#999999',
+        paddingTop: 30,
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center'
+    },
+    titulo: {
+        fontSize: 30,
+        color: '#FFFFFF'
+    },
     input: {
-        height: 40,
         borderWidth: 1,
-        borderColor: '#000000',
-        margin: 10,
+        borderColor: '#999999',
+        backgroundColor: '#EEEEEE',
+        color: '#000000',
+        height: 40,
+        margin: 20,
         padding: 10
+    },
+    inputArea: {
+        alignSelf: 'stretch'
+    },
+    area: {
+        width: 300,
+        height: 300,
+        marginTop: 10
+    },
+    guri: {
+        width: 300,
+        height: 300,
+        marginTop: -70,
+        zIndex: 0
     },
     texto: {
         fontSize: 20,
-        textAlign: 'center'
+        color: '#FFFFFF',
+        padding: 10,
+        backgroundColor: 'transparent',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        height: 70
+    },
+    texto1: {
+        zIndex: 1
+    },
+    texto2: {
+        zIndex: 1,
+        marginTop: -70
     }
 });
