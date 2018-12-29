@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Button, Alert, TouchableOpacity, Image, ImageBackground } from 'react-native';
 
 class Botao extends Component {
 
@@ -23,7 +23,7 @@ class Botao extends Component {
             },
             botaoText: {
                 color: props.color,
-                fontSize: 14,
+                fontSize: 18,
                 fontWeight: 'bold'
             }
         });
@@ -42,22 +42,59 @@ class Botao extends Component {
 
 export default class PrimeiroProjeto extends Component {
 
+
+    constructor(props) {
+        super(props);
+        this.state = { texto: 'Frase do dia...' };
+
+        this.frases = ['A vida trará coisas boas se tiveres paciência.', 'Demonstre amor e alegria em todas as oportunidades e verás que a paz nasce dentro de você.', 'Não compense na ira o que lhe falta na razão.', 'Defeitos e virtudes são apenas dois lados da mesma moeda.', 'A maior de todas as torres começa no solo.', 'Não há que ser forte. Há que ser flexível.', 'Gente todo dia arruma os cabelos, por que não o coração?'];
+
+        this.quebrarBixcoito = this.quebrarBixcoito.bind(this);
+    }
+
     quebrarBixcoito() {
-        Alert.alert("Frase qualquer");
+        let s = this.state;
+        let r = Math.floor(Math.random() * this.frases.length);
+        Alert.alert(this.frases[r]);
+        s.texto = this.frases[r];
+        this.setState(s);
     }
 
     render() {
         return (
             <View style={styles.body}>
-                <Botao color="#B59619" texto="NOTHING" acao={this.quebrarBixcoito}/>                
+                <ImageBackground style={{ width: null, flex: 1 }} source={require('./img/back.jpg')}>
+                    <View style={styles.area}>
+                        <Image source={require('./img/cookie.png')} />
+                        <Text style={styles.textoBotao}>"{this.state.texto}"</Text>
+                        <View style={{height:50}}></View>                        
+                        <Botao color="white" texto="Quebrar Bixcoito" acao={this.quebrarBixcoito} />
+                    </View>
+                </ImageBackground>
             </View>
+
         );
     }
 }
 
 const styles = StyleSheet.create({
     body: {
-        paddingTop: 50,
-        margin: 10
+        paddingTop: 24,
+        flex: 1
+    },
+    area: {
+        margin: 10,
+        paddingTop: 20,
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    textoBotao: {
+        color: 'white',
+        fontSize: 24,
+        margin: 5,
+        fontStyle: 'italic',
+        textAlign: 'center',
+        fontWeight: 'bold'
     }
 });    

@@ -67,6 +67,7 @@ export default class PrimeiroProjeto extends Component {
                     <View style={styles.area}>
                         <Image source={require('./img/cookie.png')} />
                         <Text style={styles.textoBotao}>"{this.state.texto}"</Text>
+                        <View style={{height:50}}></View>                        
                         <Botao color="white" texto="Quebrar Bixcoito" acao={this.quebrarBixcoito} />
                     </View>
                 </ImageBackground>
@@ -90,9 +91,10 @@ const styles = StyleSheet.create({
     },
     textoBotao: {
         color: 'white',
-        fontSize: 20,
-        margin: 30,
+        fontSize: 24,
+        margin: 5,
         fontStyle: 'italic',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight: 'bold'
     }
 });    
