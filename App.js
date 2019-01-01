@@ -5,16 +5,12 @@ export default class PrimeiroProjeto extends Component {
 
     render() {
         return (
-            <View style={styles.body}>
-                <Text>aaa</Text>
-            </View>
+            <Text>32/12/2018 - 23:48</Text>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    body: {
-        paddingTop: 20,
-        margin: 10
-    }
+
+
 });
