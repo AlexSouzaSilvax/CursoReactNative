@@ -17,8 +17,7 @@ export default class PrimeiroProjeto extends Component {
 
         let s = this.state;
 
-        if (this.timer != null) {
-            // parar o timer
+        if (this.timer != null) {            
             clearInterval(this.timer);
             this.timer = null;
             s.botao = "Começar";
