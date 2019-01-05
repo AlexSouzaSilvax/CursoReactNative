@@ -77,8 +77,8 @@ export default class CalculadoraIphone extends Component {
         }
         else if (b == '=') {
             s.r = eval(s.r);
-            let resString = s.r = eval(s.r);
-            Alert.alert(title = "Resultado:", message = resString.toString());
+          {/*  let resString = s.r = eval(s.r);
+            Alert.alert(title = "Resultado:", message = resString.toString());*/}
         }
         else {
             if (s.r == '0') {

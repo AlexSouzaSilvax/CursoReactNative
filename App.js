@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 export default class PrimeiroProjeto extends Component {
 
+
     render() {
-        return(
-            <View>
-                <ScrollView>
-                    <View></View>
-                </ScrollView>
+        return (
+            <View style={styles.body}>
+
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    body: {
+        paddingTop: 24,        
+        flex:1
+    }
+});
