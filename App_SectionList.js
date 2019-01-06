@@ -46,7 +46,11 @@ export default class PrimeiroProjeto extends Component {
     render() {
         return (
             <View style={styles.body}>
-                <SectionList sections={this.state.listData} renderItem={({ item }) => this.listRender(item)} renderSectionHeader={({ section }) => this.listSectionRender(section)} />
+                <SectionList
+                    sections={this.state.listData}
+                    renderItem={({ item }) => this.listRender(item)}
+                    renderSectionHeader={({ section }) => this.listSectionRender(section)}
+                    stickySectionHeadersEnabled />
             </View>
         );
     }
@@ -54,8 +58,7 @@ export default class PrimeiroProjeto extends Component {
 
 const styles = StyleSheet.create({
     body: {
-        paddingTop: 24,
-        flex: 1
+        paddingTop: 24        
     },
     item: {
         fontSize: 18,

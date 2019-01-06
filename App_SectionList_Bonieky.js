@@ -7,18 +7,14 @@ export default class PrimeiroProjeto extends Component {
 		super(props);
 		this.state = {
 			listData:[
-				{title:'B', data:[
-					{key:'1', nome:'Bonieky', idade:90}
+				{title:'Bonieky', data:[
+					{key:'1',  idade:90}
 				]},
-				{title:'C', data:[
-					{key:'2', nome:'Cláudio', idade:23},
-					{key:'3', nome:'Cleberson', idade:34},
-					{key:'4', nome:'Curioso', idade:26}
+				{title:'Cláudio', data:[
+					{key:'2', idade:23}
 				]},
-				{title:'D', data:[
-					{key:'5', nome:'Dantas', idade:78},
-					{key:'6', nome:'Diverson', idade:45},
-					{key:'7', nome:'Daniel', idade:38}
+				{title:'Dantas', data:[
+					{key:'3', idade:78}
 				]}
 			]
 		};
@@ -32,7 +28,7 @@ export default class PrimeiroProjeto extends Component {
 
 	listRender(item) {
 		return (
-			<Text style={styles.item}>{item.nome} - {item.idade} anos</Text>
+			<Text style={styles.item}>{item.idade} anos</Text>
 		);
 	}
 
