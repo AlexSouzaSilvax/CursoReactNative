@@ -16,6 +16,7 @@ export default class PrimeiroProjeto extends Component {
     abrirModal() {
         let s = this.state;
         s.modalVisible = true;
+
         this.setState(s);
     }
 
@@ -29,13 +30,11 @@ export default class PrimeiroProjeto extends Component {
         return (
             <View style={styles.body}>
 
-                <Modal animationType="slide" visible={this.state.modalVisible} onRequestClose={()=>{}} >
-                   
-                    <View style={styles.modal}>                        
-                        <Button title="X" onPress={this.fecharModal} />
+                <Modal animationType="slide" visible={this.state.modalVisible} onRequestClose={()=>{}} > {/* slide, fade, none */}
+                    <View style={styles.modal}>
                         <Text>Teste</Text>
+                        <Button title="Fechar Modal" onPress={this.fecharModal} />
                     </View>
-
                 </Modal>
 
                 <Button title="Abrir Modal" onPress={this.abrirModal} />
@@ -53,9 +52,8 @@ const styles = StyleSheet.create({
     },
     modal: {
         flex: 1,
-        margin:15,        
         backgroundColor: "#00FF00",
-        paddingTop: 24,
-        alignItems: "flex-start"
+        paddingTop: 40,
+        alignItems: "center"
     }
 });
