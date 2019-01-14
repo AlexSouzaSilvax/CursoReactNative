@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
     modal: {
         flex: 1,
-        margin:15,        
+        margin:15,        ddd
         backgroundColor: "#00FF00",
         paddingTop: 24,
         alignItems: "flex-start"
