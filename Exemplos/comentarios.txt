@@ -1,0 +1,8 @@
+--------------------------------------------------------------
+Modal animationType=" ? "
+
+none = sem nenhuma animação
+fade = aperece meio que esfumaçando a tela
+slide = aparece de baixo pra cima
+
+--------------------------------------------------------------

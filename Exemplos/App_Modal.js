@@ -29,7 +29,7 @@ export default class PrimeiroProjeto extends Component {
         return (
             <View style={styles.body}>
 
-                <Modal animationType="slide" visible={this.state.modalVisible} onRequestClose={()=>{}} >
+                <Modal animationType="fade" transparent={true} visible={this.state.modalVisible} onRequestClose={this.fecharModal} >
                    
                     <View style={styles.modal}>                        
                         <Button title="X" onPress={this.fecharModal} />
