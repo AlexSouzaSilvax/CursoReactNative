@@ -6,11 +6,11 @@ export default class PrimeiroProjeto extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			nome:''
+			nome: ''
 		};
 
-		AsyncStorage.getItem("nome").then((value)=>{
-			this.setState({nome:value});
+		AsyncStorage.getItem("nome").then((value) => {
+			this.setState({ nome: value });
 		});
 
 		this.setNome = this.setNome.bind(this);
@@ -28,8 +28,8 @@ export default class PrimeiroProjeto extends Component {
 	render() {
 		return (
 			<View style={styles.body}>
-					
-				<TextInput style={styles.input} value={this.state.nome} onChangeText={(text)=>this.setNome(text)} />
+
+				<TextInput style={styles.input} value={this.state.nome} onChangeText={(text) => this.setNome(text)} />
 
 			</View>
 		);
@@ -37,33 +37,18 @@ export default class PrimeiroProjeto extends Component {
 }
 
 const styles = StyleSheet.create({
-	body:{
-		paddingTop:20,
-		flex:1,
-		justifyContent:'center',
-		alignItems:'center'
+	body: {
+		paddingTop: 20,
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center'
 	},
-	input:{
-		height:40,
-		width:200,
-		borderWidth:1,
-		borderColor:'#CCCCCC',
-		padding:10,
-		fontSize:16
+	input: {
+		height: 40,
+		width: 200,
+		borderWidth: 1,
+		borderColor: '#CCCCCC',
+		padding: 10,
+		fontSize: 16
 	}
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

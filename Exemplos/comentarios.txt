@@ -6,3 +6,9 @@ fade = aperece meio que esfumaçando a tela
 slide = aparece de baixo pra cima
 
 --------------------------------------------------------------
+
+createTabNavigator -- em beta, nao funcionou na minha maquina
+
+createBottomTabNavigator -- Tab igual o do ios na parte inferior do app
+
+createMaterialTopTabNavigator -- Tab padrao do android
